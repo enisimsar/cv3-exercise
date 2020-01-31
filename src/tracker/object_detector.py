@@ -14,6 +14,7 @@ class FRCNN_FPN(FasterRCNN):
         super(FRCNN_FPN, self).__init__(backbone, num_classes)
 
         self.roi_heads.nms_thresh = nms_thresh
+        self.roi_heads.score_thresh = 0.25
 
     def detect(self, img):
         device = list(self.parameters())[0].device
@@ -164,4 +165,4 @@ class FRCNN_FPN(FasterRCNN):
             pred_boxes, images.image_sizes[0], original_image_sizes[0])
         pred_scores = pred_scores[:, 1:].squeeze(dim=1).detach()
         return pred_boxes, pred_scores
-        
+    

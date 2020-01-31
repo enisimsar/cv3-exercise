@@ -88,7 +88,7 @@ class Tracker:
 		# batch_size = 1
 		B = []
 		S = []
-		# self.tracks = []
+		# self.tracks = []tf
 
 		# bt_1s = []
 		# for i, t_active in enumerate(self.track_actives):
