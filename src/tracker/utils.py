@@ -94,7 +94,7 @@ def plot_sequence(tracks, db, offset=0, first_n_frames=None):
         # plt.savefig(im_output, dpi=100)
         # plt.close()
 
-        if first_n_frames is not None and first_n_frames - 1 == i:
+        if first_n_frames is not None and first_n_frames - 1 + offset == i:
             break
 
 
