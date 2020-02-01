@@ -5,6 +5,7 @@ from collections import OrderedDict
 from torchvision.models.detection import FasterRCNN
 from torchvision.models.detection.transform import resize_boxes
 from torchvision.models.detection.backbone_utils import resnet_fpn_backbone
+from torchvision.models.detection.rpn import AnchorGenerator
 
 
 class FRCNN_FPN(FasterRCNN):

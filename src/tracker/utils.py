@@ -43,7 +43,7 @@ colors = [
     'tomato', 'turquoise', 'violet', 'wheat', 'white', 'whitesmoke', 'yellow', 'yellowgreen'
 ]
 
-def plot_sequence(tracks, db, first_n_frames=None):
+def plot_sequence(tracks, db, offset=0, first_n_frames=None):
     """Plots a whole sequence
 
     Args:
@@ -62,6 +62,8 @@ def plot_sequence(tracks, db, first_n_frames=None):
     styles = defaultdict(lambda: next(loop_cy_iter))
 
     for i, v in enumerate(db):
+        if i < offset:
+            continue
         img = v['img'].mul(255).permute(1, 2, 0).byte().numpy()
         width, height, _ = img.shape
 
