@@ -120,9 +120,7 @@ class MOT16Sequence(Dataset):
     def __getitem__(self, idx):
         """Return the ith image converted to blob"""
         data = self.data[idx]
-
         img = Image.open(data['im_path']).convert("RGB")
-
         img = self.transforms(img)
 
         sample = {}
