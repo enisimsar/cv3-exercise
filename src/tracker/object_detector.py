@@ -23,11 +23,12 @@ class FRCNN_FPN(FasterRCNN):
 
         detections = self(img)[0]
 
-        return detections['boxes'].detach(), detections['scores'].detach()
+        return detections['boxes'].detach().cpu(), detections['scores'].detach().cpu()
 
     def detect_with_proposal(self, img, t_1_proposal):
         """
             https://github.com/pytorch/vision/blob/master/torchvision/models/detection/generalized_rcnn.py
+            https://github.com/pytorch/vision/blob/master/torchvision/models/detection/roi_heads.py
         """
         images = img
             
